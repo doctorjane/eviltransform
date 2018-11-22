@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   This is a straight translation of the Python implementation of EvilTransform
   (https://github.com/googollee/eviltransform).
 }
-  # spec.homepage      = "https://github.com/doctorjane/eviltransform"
+  spec.homepage      = "https://github.com/doctorjane/eviltransform"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
