@@ -2,9 +2,11 @@
 
 A collection of functions for working with geospatial coordinates in China.
 
-For information on geospatial coordinates in Chinca, visit [Restrictions on geographic data in China][1]
+For information on geospatial coordinates in China, visit the wikipedia article 
+[Restrictions on geographic data in China][1]
 
-This code is a simple translation of the Python version found at https://github.com/googollee/eviltransform 
+This code is a simple translation of the Python version found at 
+https://github.com/googollee/eviltransform 
 and is meant as a ruby contribution to that project.  
  
 [1]: https://en.wikipedia.org/wiki/Restrictions_on_geographic_data_in_China
@@ -28,7 +30,9 @@ Or install it yourself as:
 
 ## Usage
 
-Please see the test file for usage examples.
+Please see the [test file][2] for usage examples.
+
+[2]: https://github.com/doctorjane/eviltransform/blob/master/test/eviltransform_test.rb
 
 ## Development
 
