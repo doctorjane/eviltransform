@@ -1,3 +1,4 @@
+require 'benchmark'
 require "test_helper"
 
 class EviltransformTest < Minitest::Test
@@ -83,4 +84,26 @@ class EviltransformTest < Minitest::Test
     assert_lt Eviltransform.distance(ret[0], ret[1], wgsLat, wgsLng), 0.5
   end
 
+  def test_z_speed
+    n = 100000
+    tests = {
+      'wgs2gcj' =>
+        lambda { Eviltransform.wgs2gcj(TESTS[0][0], TESTS[0][1]) },
+      'gcj2wgs' =>
+        lambda { Eviltransform.gcj2wgs(TESTS[0][0], TESTS[0][1]) },
+      'gcj2wgs_exact' =>
+        lambda { Eviltransform.gcj2wgs_exact(TESTS[0][0], TESTS[0][1]) },
+      'distance' => lambda { Eviltransform.distance(*TESTS[0]) }
+    }
+
+    puts
+    puts '='*30
+    tests.each do |name, func|
+      sec = Benchmark.realtime do
+        n.times { func.call }
+      end
+      puts "%-13s %9.2f ns/op" % [name, sec * 1e9 / n]
+    end
+    puts
+  end
 end
